@@ -1,0 +1,1 @@
+# Nif for Elixir.RustlerCoreDump

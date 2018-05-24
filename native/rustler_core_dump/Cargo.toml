@@ -1,0 +1,14 @@
+[package]
+name = "rustler_core_dump"
+version = "0.1.0"
+authors = []
+
+[lib]
+name = "rustler_core_dump"
+path = "src/lib.rs"
+crate-type = ["dylib"]
+
+[dependencies]
+rustler = {git = "https://github.com/hansihe/rustler"}
+rustler_codegen = {git = "https://github.com/hansihe/rustler"}
+lazy_static = "0.2"
