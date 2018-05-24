@@ -6,7 +6,6 @@ defmodule RustlerCoreDump do
   def test do
     reference = make_ref()
     IO.inspect(reference)
-    {1, reference} = roundtrip(reference)
-    IO.inspect(reference)
+    {1, ^reference} = roundtrip(reference)
   end
 end

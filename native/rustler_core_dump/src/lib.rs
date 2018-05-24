@@ -13,7 +13,9 @@ rustler_export_nifs! {
 
 fn roundtrip<'a>(env: NifEnv<'a>, args: &[NifTerm<'a>]) -> NifResult<NifTerm<'a>> {
     let original: NifTerm = args[0].decode()?;
+    eprintln!("{:?}", original);
     let binary = original.to_binary();
     let roundtripped: NifTerm = binary.to_term(env);
+    eprintln!("{:?}", roundtripped);
     Ok((1, roundtripped).encode(env))
 }
