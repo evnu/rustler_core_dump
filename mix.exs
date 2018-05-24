@@ -31,7 +31,7 @@ defmodule Rusty.Mixfile do
     [
       rustler_core_dump: [
         path: "native/rustler_core_dump",
-        # mode: :release
+        mode: :debug
       ]
     ]
   end
