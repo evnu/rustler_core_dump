@@ -8,4 +8,10 @@ defmodule RustlerCoreDump do
     IO.inspect(reference)
     {1, ^reference} = roundtrip(reference)
   end
+
+  def test2 do
+    reference = 1
+    IO.inspect(reference)
+    {1, ^reference} = roundtrip(reference)
+  end
 end
