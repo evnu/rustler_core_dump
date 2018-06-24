@@ -1,7 +1,7 @@
 #[macro_use]
 extern crate rustler;
 
-use rustler::{NifEncoder, NifEnv, NifResult, NifTerm};
+use rustler::{Encoder, Env, NifResult, Term};
 
 rustler_export_nifs! {
     "Elixir.RustlerCoreDump",
@@ -11,11 +11,11 @@ rustler_export_nifs! {
     None
 }
 
-fn roundtrip<'a>(env: NifEnv<'a>, args: &[NifTerm<'a>]) -> NifResult<NifTerm<'a>> {
-    let original: NifTerm = args[0].decode()?;
+fn roundtrip<'a>(env: Env<'a>, args: &[Term<'a>]) -> NifResult<Term<'a>> {
+    let original: Term = args[0].decode()?;
     eprintln!("{:?}", original);
     let binary = original.to_binary();
-    let roundtripped: NifTerm = binary.to_term(env);
+    let roundtripped: Term = binary.to_term(env);
     eprintln!("{:?}", roundtripped);
     Ok((1, roundtripped).encode(env))
 }
