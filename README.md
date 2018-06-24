@@ -2,6 +2,8 @@
 
 Reproducing a core dump due with rustler.
 
+Note: This has been resolved ([see](https://github.com/hansihe/rustler/issues/144)).
+
 ## Run Example
 
 ```
